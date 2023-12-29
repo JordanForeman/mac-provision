@@ -26,7 +26,8 @@ brew install \
     nvm \
     exa \
     tor \
-    colima
+    colima \
+    spaceship
 
 # Brew > Cask
 brew install --cask \
@@ -44,5 +45,34 @@ brew install --cask \
     vlc \
     zoom \
     intellij-idea
-
 echo "Successfully installed Homebrew Packages!"
+
+echo "Configuring Shell Environment"
+
+touch ~/.zshrc
+touch ~/.aliases
+mkdir -p ~/.nvm
+
+echo "Configuring Rocketship 🚀"
+echo "# Rocketship Setup" >> ~/.zshrc
+echo "source $(brew --prefix)/opt/spaceship/spaceship.zsh" >> ~/.zshrc
+echo "" >> ~/.zshrc
+
+echo "Configuring 📦 Node.js Version Manager"
+echo "# NVM Configuration" >> ~/.zshrc
+echo "export NVM_DIR=\"$HOME/.nvm\"" >> ~/.zshrc
+echo "[ -s \"/usr/local/opt/nvm/nvm.sh\" ] && \. \"/usr/local/opt/nvm/nvm.sh\"" >> ~/.zshrc
+echo "[ -s \"/usr/local/opt/nvm/etc/bash_completion.d/nvm\" ] && \. \"/usr/local/opt/nvm/etc/bash_completion.d/nvm\"" >> ~/.zshrc
+echo "" >> ~/.zshrc
+
+# Setup common aliases
+echo "# Load Aliases" >> ~/.zshrc
+echo "if [ -f ~/.aliases ]; then" >> ~/.zshrc
+echo "    . ~/.aliases" >> ~/.zshrc
+echo "fi" >> ~/.zshrc
+echo "" >> ~/.zshrc
+
+echo "alias ls=exa -la" >> ~/.aliases
+echo "alias cat=bat" >> ~/.aliases
+
+source ~/.zshrc

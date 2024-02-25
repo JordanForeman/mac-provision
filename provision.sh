@@ -53,6 +53,9 @@ touch ~/.zshrc
 touch ~/.aliases
 mkdir -p ~/.nvm
 
+echo "Installing Oh My ZSH!"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 echo "Configuring Rocketship 🚀"
 echo "# Rocketship Setup" >> ~/.zshrc
 echo "source $(brew --prefix)/opt/spaceship/spaceship.zsh" >> ~/.zshrc

@@ -1,3 +1,6 @@
+> [!WARNING]
+> This repository has been archived. Use [jordanforeman/dotfiles](https://github.com/jordanforeman/dotfiles) instead
+
 # Provision a new Mac
 Provisioning scripts for a new (or recently reinstalled) Mac
 
